@@ -55,6 +55,9 @@
         <h2 class="text-2xl leading-7 font-semibold text-green-400 text-center">
           Welcome to your Nuxt Application
         </h2>
+        <div>
+          <span><h2>HELLO</h2></span>
+        </div>
         <p class="mt-3 text-gray-600">
           We recommend you take a look at the
           <a
