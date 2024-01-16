@@ -9,8 +9,8 @@
     </div>
     <div class="grid">
       <NuxtLink
-        class="flex space-x-4 px-4 py-3 items-center hover:bg-gray-200"
-        :to="'/'"
+        :class="`flex space-x-4 px-4 py-3 items-center hover:bg-gray-200 ${$route.path == '/home' ? 'bg-gray-200' : ''}`"
+        :to="'/home'"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
         <p class="text-sm text-gray-700 font-medium">Home</p>
       </NuxtLink>
       <NuxtLink
-        class="flex space-x-4 px-4 py-3 items-center hover:bg-gray-200"
+        :class="`flex space-x-4 px-4 py-3 items-center hover:bg-gray-200 ${['/', '', '/form'].includes($route.path) ? 'bg-gray-200' : ''}`"
         :to="'/'"
       >
         <svg
@@ -52,8 +52,8 @@
         <p class="text-sm text-gray-700 font-medium">Manage Asset</p>
       </NuxtLink>
       <NuxtLink
-        class="flex space-x-4 px-4 py-3 items-center hover:bg-gray-200"
-        :to="'/'"
+        :class="`flex space-x-4 px-4 py-3 items-center hover:bg-gray-200 ${$route.path == '/settings' ? 'bg-gray-200' : ''}`"
+        :to="'/settings'"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -97,14 +97,20 @@
             <textarea
               id="Description"
               v-model="form.Description"
+              maxlength="200"
               rows="3"
               class="px-4 py-2 bg-white text-black/80 text-sm focus:text-black/90 focus:outline-none border border-[#eaecf0] rounded-lg"
             />
+            <div class="flex justify-end">
+              <span class="text-xs text-black/60"
+                >{{ form.Description.length }}/200</span
+              >
+            </div>
           </div>
-          <BaseButton className="mb-4" type="submit">
+          <BaseButton className="mb-4 w-fit" type="submit">
             <div
               v-if="!isLoading"
-              class="px-2 text-base font-semibold text-white"
+              class="px-6 text-base font-semibold text-white"
             >
               Add Asset
             </div>

@@ -51,7 +51,7 @@ export const assetListDummy = [
     AssetID: 'V003',
     AssetName: 'SUV',
     Category: 'Vehicle',
-    Status: 'Active',
+    Status: 'In Repair',
     ModelNumber: 'SUV2022',
     SerialNumber: 'SN1122334455',
     Description: 'Honda CR-V 2022',
@@ -88,7 +88,7 @@ export const assetListDummy = [
     AssetID: 'T004',
     AssetName: 'Winter Tire Set',
     Category: 'Tire',
-    Status: 'Active',
+    Status: 'In Repair',
     ModelNumber: 'WT300',
     SerialNumber: 'SN5432109876',
     Description: 'Pirelli Winter Sottozero',
@@ -97,3 +97,15 @@ export const assetListDummy = [
     VendorName: 'Pirelli Tires',
   },
 ]
+
+export function currencyFormatter(number) {
+  const formatter = new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+
+    // These options are needed to round to whole numbers if that's what you want.
+    // minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  })
+  return formatter.format(number)
+}

@@ -58,7 +58,7 @@ export const actions = {
         })
         .catch(function (error) {
           const assetResult =
-            state.assetList.data.length > 0
+            state.assetList.data.length > 1
               ? JSON.parse(JSON.stringify(state.assetList.data))
               : [...assetListDummy]
           commit('setAssetList', {

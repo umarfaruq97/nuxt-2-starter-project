@@ -22,7 +22,7 @@
                 :key="keyIndex"
                 class="px-6 py-4 text-gray-600 text-sm"
               >
-                <slot :name="`cell-${keyItem.key}`" :item="keyItem">
+                <slot :name="`cell-${keyItem.key}`" :item="item">
                   {{ item[keyItem.key] }}
                 </slot>
               </td>

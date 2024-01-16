@@ -15,12 +15,27 @@
       :fields="fields"
       :list="assetListFiltered"
       :isLoading="assetList.isLoading"
-    ></BaseTable>
+    >
+      <template #cell-PurchaseCost="{ item }">
+        {{ currencyFormatter(item.PurchaseCost) }}
+      </template>
+      <template #cell-PurchaseDate="{ item }">
+        {{ $moment(item.PurchaseDate, 'YYYY-MM-DD').format('DD MMM YYYY') }}
+      </template>
+      <template #cell-Status="{ item }">
+        <div
+          :class="`rounded-full w-fit px-2 py-1 font-medium ${item.Status === 'Active' ? 'bg-ecfdf3 text-027a48' : item.Status === 'Inactive' ? 'bg-feebee text-b23842' : 'bg-fffaeb text-b54708'}`"
+        >
+          {{ item.Status }}
+        </div>
+      </template>
+    </BaseTable>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { currencyFormatter } from '~/utils/data'
 export default {
   name: 'ManageAsset',
   data() {
@@ -58,6 +73,7 @@ export default {
   },
   methods: {
     ...mapActions('manageAsset', ['getAssetList']),
+    currencyFormatter,
   },
 }
 </script>
