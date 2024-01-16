@@ -1,18 +1,17 @@
 <template>
-  <ManageAsset />
+  <AssetForm />
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
   head() {
     return {
-      title: 'Asset Finder - List',
+      title: 'Asset Finder - Form',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Asset Finder - List',
+          content: 'Asset Finder - Form',
         },
       ],
     }
