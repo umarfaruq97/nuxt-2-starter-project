@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'taldio-assetfindr-assignment',
+    title: 'nuxt-2-starter-project',
     htmlAttrs: {
       lang: 'en',
     },
